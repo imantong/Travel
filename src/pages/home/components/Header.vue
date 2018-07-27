@@ -24,28 +24,27 @@ export default {
 	@import '~styles/varibles.styl'
 	.header
 	  display: flex
+	  align-items: center
+	  width: 100%
 	  line-height: .86rem
 	  background: $bgColor
 	  color: #fff
 	  .header-left
-	  	width: .64rem
-	  	float: left
+	  	flex: 0 0 .64rem
 	  	.back-icon
 	  	  text-align: center
 	  	  font-size: .4rem
 	  .header-input
-	  	flex: 1
+	  	flex: auto
 	  	height: .62rem
 	  	line-height: .62rem
-	  	margin-top: .12rem
 	  	margin-left: .2rem
 	  	padding-left: .2rem
 	  	background: #fff
 	  	border-radius: .1rem
 	  	color: #ccc
 	  .header-right
-	  	width: 1.24rem
-	  	float: right
+	  	flex: 0 0 1.24rem
 	  	text-align: center
 	  	.arrow-icon
 	  	  margin-left: -.04rem
