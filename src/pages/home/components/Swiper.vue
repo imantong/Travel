@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="去哪儿门票" />
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
@@ -12,24 +12,21 @@
 <script>
   export default {
   	name: 'HomeSwiper',
+    props: {
+      list: Array
+    },
     data () {
       return {
         swiperOption: {
           pagination: '.swiper-pagination',
           autoplay: 2000,
           loop: true
-        },
-        swiperList: [{
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1807/e0/b59ec01d6992e202.jpg_750x200_db9cc3d8.jpg'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1706/5d/a47eff229e73f302.jpg_750x200_bcc494d4.jpg'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1807/23/ecfe9185a5f8f702.jpg_750x200_73209fe0.jpg'
         }
-        ]
+      }
+    },
+    computed: {
+      showSwiper () {
+        return this.list.length
       }
     }
   }
@@ -42,7 +39,7 @@
     overflow: hidden
     width: 100%
     height: 0
-    padding-bottom: 26.67%
+    padding-bottom: 31.25%
     background: #eee
     .swiper-img
       width: 100%

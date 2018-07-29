@@ -4,7 +4,7 @@
     <ul>
       <li 
         class="item border-bottom" 
-        v-for="item of recommendList"
+        v-for="item of list"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -22,31 +22,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg',
-        title: '杭州必游TOP10',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg',
-        title: '杭州必游TOP10',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg',
-        title: '杭州必游TOP10',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg',
-        title: '杭州必游TOP10',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -54,14 +31,13 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
   .title 
-    margin-top: .2rem
     line-height: .8rem
     background: #eee
     text-indent: .2rem
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 38.01%
     .item-img
       width: 100%
   .item-info
@@ -72,6 +48,6 @@ export default {
       ellipsis()
     .item-desc
       line-height: .4rem
-      color: #999
+      color: #ccc
       ellipsis()
 </style>
