@@ -37,7 +37,7 @@
       }
     },
     methods: {
-      handleScroll () {       
+      handleScroll () {     
         this.now = Date.now()
         const _this = this
         const args = arguments
@@ -69,6 +69,9 @@
     },
     activated () {
       window.addEventListener('scroll', this.handleScroll)
+    },
+    deactivated () {
+      window.removeEventListener('scroll', this.handleScroll)
     }
   }
 </script>
