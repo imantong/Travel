@@ -56,6 +56,9 @@ export default {
   },
   computed: {
     ...mapState({
+      // 映射 this.currentCity = this.$store.state.city
+      // mapState 返回一个对象
+      // 使用对象展开运算符将此对象混入到外部对象中,合并为一个对象
       currentCity: 'city'
     })
   },
