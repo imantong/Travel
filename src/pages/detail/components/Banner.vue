@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/201401/06/3fbbddda915cb7637439d484440d36be.jpg_600x330_0affc9e8.jpg" alt="杭州云曼温泉" />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
         <div class="banner-title">
-          杭州云曼温泉
+          {{this.sightName}}
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe692;</span>
-          13
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallery 
-      :imgs="imgs" 
+      :imgs="bannerImgs" 
       v-show="showGallery" 
       @close="handleGalleryClose"
     ></common-gallery>
@@ -24,10 +24,14 @@
 import CommonGallery from 'common/gallery/Gallery'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallery: false,
-      imgs: ['//img1.qunarzz.com/sight/p0/201401/06/3fbbddda915cb7637439d484440d36be.jpg_600x330_0affc9e8.jpg', 'http://img1.qunarzz.com/sight/p0/1408/20/1cb305798cab7433d8f3d09ef0420016.jpg_r_800x800_8ee1a364.jpg']
+      showGallery: false
     }
   },
   methods: {
